@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
-    includes: [
+    include: [
       {
         model: Category,
         attributes: ['id', 'category_name']
@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    includes: [
+    include: [
       {
         model: Category,
         attributes: ['id', 'category_name']
